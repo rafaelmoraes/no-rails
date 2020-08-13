@@ -21,6 +21,7 @@ RSpec.describe 'invoices', 'Index' do
 
         expect(invoice['id']).not_to be_nil
         expect(invoice['number']).to eq('0000')
+        expect(invoice['identity']).to match(/[0-9]+ 0000/)
       end
     end
   end

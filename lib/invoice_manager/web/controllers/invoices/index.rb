@@ -7,7 +7,6 @@ module InvoiceManager
         class Index
           include Hanami::Action
           include Import['transactions.invoices.retrieve_all_invoices']
-          include Dry::Monads[:result]
 
           def call(_params)
             result = retrieve_all_invoices.call

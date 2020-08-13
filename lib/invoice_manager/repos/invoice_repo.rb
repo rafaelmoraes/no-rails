@@ -5,7 +5,7 @@ module InvoiceManager
     class InvoiceRepo < ROM::Repository[:invoices]
       include Import['container']
 
-      struct_namespace InvoiceManager
+      struct_namespace InvoiceManager::Entities
 
       commands :create,
                use: :timestamps,

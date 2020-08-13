@@ -6,13 +6,14 @@ module InvoiceManager
       module Invoices
         class Create
           include Hanami::Action
-          include Import['transactions.invoices.create_invoice']
           include Dry::Monads[:result]
+
+          include Import['transactions.invoices.create_invoice']
 
           def call(params)
             case create_invoice.call(params.to_hash)
-            in Success(result)
-              self.body = result.to_hash.to_json
+            in Success(invoice)
+              self.body = invoice.to_json
               self.status = 200
             in Failure(result)
               self.body = { errors: result.errors.to_hash }.to_json

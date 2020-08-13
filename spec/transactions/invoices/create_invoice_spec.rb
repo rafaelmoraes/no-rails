@@ -4,7 +4,7 @@ require 'spec_helper'
 
 RSpec.describe InvoiceManager::Transactions::Invoices::CreateInvoice do
   let(:invoice_repo) { double('InvoiceRepo') }
-  let(:invoice) { InvoiceManager::Invoice.new(id: 1, number: '0000') }
+  let(:invoice) { InvoiceManager::Entities::Invoice.new(id: 1, number: '0000') }
 
   subject { described_class.new(invoice_repo: invoice_repo) }
 

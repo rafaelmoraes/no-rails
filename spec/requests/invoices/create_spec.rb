@@ -16,6 +16,7 @@ RSpec.describe 'invoices', 'Create' do
 
         expect(invoice['id']).not_to be_nil
         expect(invoice['number']).to eq('123')
+        expect(invoice['identity']).to match(/[0-9]+ 123/)
       end
     end
   end

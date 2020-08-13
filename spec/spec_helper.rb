@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
+require 'pry'
+
 ENV['APP_ENV'] ||= 'test'
 
-require 'pry'
+require 'simplecov'
+SimpleCov.start
 
 RSpec.configure do |config|
   config.expect_with(:rspec) do |expectations|

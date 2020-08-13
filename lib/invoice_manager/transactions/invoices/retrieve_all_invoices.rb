@@ -5,8 +5,6 @@ module InvoiceManager
     module Invoices
       class RetrieveAllInvoices
         include Dry::Monads[:result]
-        include Dry::Monads::Do.for(:call)
-
         include Import['repos.invoice_repo']
 
         def call
